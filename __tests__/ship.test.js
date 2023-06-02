@@ -5,9 +5,12 @@ describe("Ship constructor", () => {
 	let dundee;
 	let itinerary;
 	let ship;
-	let passengerList = [];
 
 	beforeEach(() => {
+		const jon = "Jon";
+		const holly = "Holly";
+		const matilda = "Matilda";
+		let passengerList = [jon, holly, matilda];
 		aberdeen = {
 			name: "Aberdeen",
 			ships: [],
@@ -21,7 +24,6 @@ describe("Ship constructor", () => {
 			addShip: jest.fn(),
 		};
 		itinerary = { ports: [aberdeen, dundee] };
-		passengerList = ["Jon", "Holly", "Matilda"];
 		ship = new Ship(itinerary, passengerList);
 	});
 	it("can make new ships", () => {
