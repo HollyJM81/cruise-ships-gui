@@ -1,14 +1,22 @@
 {
-	"name": "cruise-ships",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "jest"
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"jest": "^29.5.0"
-	}
+  "name": "cruise-ships-gui",
+  "version": "1.0.0",
+  "description": "A Project for the Command Shift Software Engineering Bootcamp OOP module, using vanilla javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HollyJM81/cruise-ships-gui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HollyJM81/cruise-ships-gui/issues"
+  },
+  "homepage": "https://github.com/HollyJM81/cruise-ships-gui#readme"
 }
