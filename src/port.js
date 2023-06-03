@@ -1,4 +1,5 @@
-class Port {
+(function exportPort() {
+	class Port {
 	constructor(port) {
 		this.name = port;
 		this.ships = [];
@@ -13,5 +14,10 @@ class Port {
 		this.ships.splice(i, 1);
 	}
 }
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Port;
+} else {
+  window.Port = Port;
+}
+}());
 
-module.exports = { Port };

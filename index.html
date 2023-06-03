@@ -7,29 +7,36 @@
 		<title>Cruise Ships</title>
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<style>@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Pacifico&display=swap');</style>
 	</head>
 	<body>
 		<div id="viewport">
 			<div id="ports"></div>
+			<div id="ship"></div>
+			<div id="message"></div>
 		</div>
+		<div>
+			<button id="sailbutton">Set Sail!</button>
+		</div>
+		
 
-		<script src="../src/controller.js"></script>
-		<script src="../src/port.js"></script>
-		<script src="../src/itinerary.js"></script>
-		<script src="../src/ship.js"></script>
+		<script src="src/controller.js"></script>
+		<script src="src/port.js"></script>
+		<script src="src/itinerary.js"></script>
+		<script src="src/ship.js"></script>
 		<script>
-			const controller = new Controller();
-			const wellington = new Port("Wellington");
-			const dunedin = new Port("Dunedin");
-			const auckland = new Port("Auckland");
-			const christchurch = new Port("Christchurch");
 			const itinerary = new Itinerary([
-				auckland,
-				wellington,
-				christchurch,
-				dunedin,
+				new Port("Auckland"),
+				new Port("Wellington"),
+				new Port("Christchurch"),
+				new Port("Dunedin")
 			]);
+			const ship = new Ship(itinerary);
+			const controller = new Controller(ship);
+			
 			controller.renderPorts(itinerary.ports);
+			
+			controller.renderShip();
 		</script>
 	</body>
 </html>
