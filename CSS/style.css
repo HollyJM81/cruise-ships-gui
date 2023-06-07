@@ -11,7 +11,7 @@ body {
 }
 
 #viewport {
-	width: 640px;
+	width: 800px;
 	height: 256px;
 	position: relative;
 	overflow-x: auto;
@@ -30,12 +30,12 @@ body {
 	background-image: url("../images/port.png");
 }
 
-#ship {
+/* #ship {
 	width: 128px;
   	height: 64px;
 	background-image: url(../images/ship.png);
 	position: absolute;
-}
+} */
 
 #sailbutton {
 	border: 0;
@@ -45,12 +45,12 @@ body {
   padding: 10px 20px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0%;
   width: 100%;
 	font-family: 'Pacifico', cursive;
 }
 
-#sailbutton:focus {
+#sailbutton:hover {
   background-color: purple;
   border-bottom-width: 0;
   padding-top: 14px;
@@ -63,8 +63,8 @@ body {
 	font-family: inherit;
 	padding: 10px 20px;
 	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
+	bottom: 100px;
+	width: 800px;
+
 	font-family: 'Bangers', cursive;
 }

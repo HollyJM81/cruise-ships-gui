@@ -9,6 +9,7 @@
 	}
 
 	initialiseSea() {
+		// this is working
 		const backgrounds = ["./images/water0.png", "./images/water1.png"];
 		let backgroundIndex = 0;
 		window.setInterval(() => {
@@ -17,11 +18,10 @@
 			}')`;
 			backgroundIndex += 1;
 		}, 1000);
-		//this should be making the sea move - it isn't
 	}
 
 	renderPorts(ports) {
-		// this.ports = [...ports];
+		// this is working
 		
 		const portsElement = document.querySelector("#ports");
 		portsElement.style.width = "0px";
@@ -53,42 +53,56 @@
 	}
 
 
-	renderShip() {
-		const ship = this.ship;
-		const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
-		const portElement = document.querySelector(`[data-port-index='${shipPortIndex}']`);
-		const shipElement = document.querySelector('#ship');
-		const sailInterval = setInterval(() => {
-		const shipLeft = parseInt(shipElement.style.left, 10);
-		if (shipLeft === (nextPortElement.offsetLeft - 32)) {
-			ship.setSail();
-			renderMessage(`Did you pack the seasickness pills?`);
-			ship.dock();
-			renderMessage(`Ooh, ${currentPort} looks nice!`);
-			clearInterval(sailInterval);
-		}
+	// renderShip(ship) {
+	// 	const ship = this.ship;
+	// 	const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+	// 	const portElement = document.querySelector(`[data-port-index='${shipPortIndex}']`);
+	// 	const shipElement = document.querySelector('#ship');
+	// 	shipElement.style.top = `${portElement.offsetTop}px`;
+	// 	shipElement.style.left = `${portElement.offsetLeft}px`;
+	// 	shipElement.style.top = `${portElement.offsetTop + 40}px`;
+	// 	shipElement.style.left = `${portElement.offsetLeft - 30}px`;
+	// 	// const sailInterval = setInterval(() => {
+	// 	// const shipLeft = parseInt(shipElement.style.left, 10);
+	// 	// if (shipLeft === (nextPortElement.offsetLeft - 32)) {
+	// 	// 	ship.setSail();
+	// 	// 	ship.dock();
+			
+	// 	// 	clearInterval(sailInterval);
+	// 	// }
 
-		shipElement.style.left = `${shipLeft + 1}px`;
-		}, 25);
-		shipElement.style.top = `${portElement.offsetTop + 40}px`;
-		shipElement.style.left = `${portElement.offsetLeft - 30}px`;
-		const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+	// 	// shipElement.style.left = `${shipLeft + 1}px`;
+	// 	// }, 25);
+	// 	// shipElement.style.top = `${portElement.offsetTop + 40}px`;
+	// 	// shipElement.style.left = `${portElement.offsetLeft - 30}px`;
+	// 	// const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+	// 	};
 
-		if (!nextPortElement) {
-		renderMessage(`That's your lot, sunshine...`);
-		}
+		
+	// setSail() {
+	// 	const ship = this.ship
+	// 	const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+	// 	const nextPortIndex = currentPortIndex + 1;
+	// 	const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+		
+	// 	if (!nextPortElement) {
+	// 	renderMessage(`That's your lot, sunshine...`);
+	// 	}
+	// 	const shipElement = document.querySelector('#ship');
+	// 	const sailInterval = setInterval(() => {
+	// 		const shipLeft = parseInt(shipElement.style.left, 10);
+	// 		if (shipLeft === (nextPortElement.offsetLeft - 30)) {
+	// 			ship.setSail();
+	// 			renderMessage(`Did you pack the seasickness pills?`);
+	// 			ship.dock();
+	// 			renderMessage(`Ooh, ${currentPort} looks nice!`);
+	// 			clearInterval(sailInterval);
+	// 		}
+
+	// 		shipElement.style.left = `${shipLeft + 1}px`;
+	// 	}, 20);
+	// };
 	}
-
-		
-	setSail() {
-		const ship = this.ship
-		const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
-		const nextPortIndex = currentPortIndex + 1;
-		const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
-		
-	};
-}
-
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Controller;
