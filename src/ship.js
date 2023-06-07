@@ -17,12 +17,12 @@ class Ship {
 		const portIndex = itinerary.ports.indexOf(this.currentPort);
 
 		if (portIndex >= itinerary.ports.length - 1) {
-			throw new Error("Thanks for traveling!");
+			throw new Error("No more ports");
 		}
 		this.previousPort = this.itinerary.ports[portIndex];
 		this.previousPort.removeShip(this);
 		this.currentPort = null;
-		console.log("Where are the seasickness tablets?!");
+
 
 		// can't set sail without passengers...
 		const passengerList = this.passengerList;
@@ -30,7 +30,6 @@ class Ship {
 
 		passengersOnBoard.push.apply(passengersOnBoard, passengerList);
 
-		console.log("Where are the seasickness tablets?!");
 	}
 
 	dock() {
@@ -47,7 +46,6 @@ class Ship {
 		while (passengersOnBoard.length) {
 			passengersOnBoard.pop();
 		}
-		console.log(`Ooh, isn't the weather lovely here in {$this.currentPort}!`);
 	}
 }
 

@@ -70,7 +70,7 @@
 			return this.renderMessage(`thanks for sailing with us!`);
 		}
 
-		  this.renderMessage(`${ship.currentPort.name} was nice! Now... where are the seasickness pills?`);
+		  this.renderMessage(`${ship.currentPort.name} was nice! Where are the seasickness pills?`);
         ship.setSail();
 
 		const shipElement = document.querySelector('#ship');
@@ -78,6 +78,7 @@
 			const shipLeft = parseInt(shipElement.style.left, 10);
 			if (shipLeft === (nextPortElement.offsetLeft - 30)) {
 				ship.dock();
+				this.renderMessage(`Welcome to ${ship.currentPort.name}! Don't forget your sunscreen...`);
 				clearInterval(sailInterval);
 			}
 			shipElement.style.left = `${shipLeft + 1}px`;
