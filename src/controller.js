@@ -78,32 +78,30 @@
 			const shipLeft = parseInt(shipElement.style.left, 10);
 			if (shipLeft === (nextPortElement.offsetLeft - 30)) {
 				ship.dock();
-				this.createDisplay();
-				this.renderMessage(`Ooh, ${currentPort} looks nice!`);
 				clearInterval(sailInterval);
 			}
-
 			shipElement.style.left = `${shipLeft + 1}px`;
 		}, 20);
+		
 	};
 
-	addPort() {
-        const ship = this.ship;
+	// addPort() {
+    //     const ship = this.ship;
   
-        const newPort = document.getElementById("input").value;
+    //     const newPort = document.getElementById("input").value;
   
-        const portObject = new Port(newPort);
+    //     const portObject = new Port(newPort);
   
-        if (newPort === "") {
-          return this.renderMessage("Where would you like to sail to today?");
-        }
+    //     if (newPort === "") {
+    //       return this.renderMessage("Where would you like to sail to today?");
+    //     }
 
-        ship.itinerary.ports.push(portObject);
+    //     ship.itinerary.ports.push(portObject);
   
-        if (!ship.currentPort) {
-          ship.currentPort = ship.itinerary.ports[0];
-        }
-      }
+    //     if (!ship.currentPort) {
+    //       ship.currentPort = ship.itinerary.ports[0];
+    //     }
+    //   }
 
 }
 
