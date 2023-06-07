@@ -21,8 +21,6 @@
 	}
 
 	renderPorts(ports) {
-		// this is working
-		
 		const portsElement = document.querySelector("#ports");
 		portsElement.style.width = "0px";
 
@@ -53,30 +51,14 @@
 	}
 
 
-	// renderShip(ship) {
-	// 	const ship = this.ship;
-	// 	const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
-	// 	const portElement = document.querySelector(`[data-port-index='${shipPortIndex}']`);
-	// 	const shipElement = document.querySelector('#ship');
-	// 	shipElement.style.top = `${portElement.offsetTop}px`;
-	// 	shipElement.style.left = `${portElement.offsetLeft}px`;
-	// 	shipElement.style.top = `${portElement.offsetTop + 40}px`;
-	// 	shipElement.style.left = `${portElement.offsetLeft - 30}px`;
-	// 	// const sailInterval = setInterval(() => {
-	// 	// const shipLeft = parseInt(shipElement.style.left, 10);
-	// 	// if (shipLeft === (nextPortElement.offsetLeft - 32)) {
-	// 	// 	ship.setSail();
-	// 	// 	ship.dock();
-			
-	// 	// 	clearInterval(sailInterval);
-	// 	// }
-
-	// 	// shipElement.style.left = `${shipLeft + 1}px`;
-	// 	// }, 25);
-	// 	// shipElement.style.top = `${portElement.offsetTop + 40}px`;
-	// 	// shipElement.style.left = `${portElement.offsetLeft - 30}px`;
-	// 	// const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
-	// 	};
+	renderShip() {
+		const ship = this.ship;
+		const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+		const portElement = document.querySelector(`[data-port-index='${shipPortIndex}']`);
+		const shipElement = document.querySelector('#ship');
+		shipElement.style.top = `${portElement.offsetTop + 40}px`;
+		shipElement.style.left = `${portElement.offsetLeft - 30}px`;
+		};
 
 		
 	// setSail() {
