@@ -9,7 +9,6 @@
 	}
 
 	initialiseSea() {
-		// this is working
 		const backgrounds = ["./images/water0.png", "./images/water1.png"];
 		let backgroundIndex = 0;
 		window.setInterval(() => {
@@ -61,30 +60,52 @@
 		};
 
 		
-	// setSail() {
-	// 	const ship = this.ship
-	// 	const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
-	// 	const nextPortIndex = currentPortIndex + 1;
-	// 	const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
-		
-	// 	if (!nextPortElement) {
-	// 	renderMessage(`That's your lot, sunshine...`);
-	// 	}
-	// 	const shipElement = document.querySelector('#ship');
-	// 	const sailInterval = setInterval(() => {
-	// 		const shipLeft = parseInt(shipElement.style.left, 10);
-	// 		if (shipLeft === (nextPortElement.offsetLeft - 30)) {
-	// 			ship.setSail();
-	// 			renderMessage(`Did you pack the seasickness pills?`);
-	// 			ship.dock();
-	// 			renderMessage(`Ooh, ${currentPort} looks nice!`);
-	// 			clearInterval(sailInterval);
-	// 		}
+	setSail() {
+		const ship = this.ship
+		const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+		const nextPortIndex = currentPortIndex + 1;
+		const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
 
-	// 		shipElement.style.left = `${shipLeft + 1}px`;
-	// 	}, 20);
-	// };
-	}
+		if(!nextPortElement) {
+			return this.renderMessage(`thanks for sailing with us!`);
+		}
+
+		  this.renderMessage(`${ship.currentPort.name} was nice! Now... where are the seasickness pills?`);
+        ship.setSail();
+
+		const shipElement = document.querySelector('#ship');
+		const sailInterval = setInterval(() => {
+			const shipLeft = parseInt(shipElement.style.left, 10);
+			if (shipLeft === (nextPortElement.offsetLeft - 30)) {
+				ship.dock();
+				this.createDisplay();
+				this.renderMessage(`Ooh, ${currentPort} looks nice!`);
+				clearInterval(sailInterval);
+			}
+
+			shipElement.style.left = `${shipLeft + 1}px`;
+		}, 20);
+	};
+
+	addPort() {
+        const ship = this.ship;
+  
+        const newPort = document.getElementById("input").value;
+  
+        const portObject = new Port(newPort);
+  
+        if (newPort === "") {
+          return this.renderMessage("Where would you like to sail to today?");
+        }
+
+        ship.itinerary.ports.push(portObject);
+  
+        if (!ship.currentPort) {
+          ship.currentPort = ship.itinerary.ports[0];
+        }
+      }
+
+}
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Controller;
