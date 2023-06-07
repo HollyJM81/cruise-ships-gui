@@ -104,6 +104,22 @@
         };
     }
 
+addPort() {
+	// give the user the ability to add ports to an itinerary (and the DOM).
+// You will need to:
+
+// Design a form alongside your viewport with a text input for the port's name, and a button to submit the form.
+// Intercept and prevent the form submission with JavaScript, and use the form data to create a new Port object 
+// (at which point you should update the DOM to show the new port.)
+
+// Insert my code here:
+
+
+}
+
+
+	// stolen code:
+	
 	// addPort() {
     //     const ship = this.ship;
   

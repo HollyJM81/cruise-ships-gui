@@ -24,6 +24,15 @@
 			<button id="sailbutton">Set Sail!</button>		
 		</div>
 
+		<form id="addport">
+			<label for="port-input">Where would you like to sail to next?</label><br>
+			<input type="text" id="port-input"><br>
+			<label for="port-submit"></label><br>
+			<input type="submit" id="port-submit">
+		</form> 
+
+		</form>
+
 		
 	
 	
@@ -35,10 +44,10 @@
 		<script src="src/ship.js"></script>
 		<script>
 			const itinerary = new Itinerary([
-				new Port("Auckland"),
-				new Port("Wellington"),
-				new Port("Christchurch"),
-				new Port("Dunedin")
+				// new Port("Auckland"),
+				// new Port("Wellington"),
+				// new Port("Christchurch"),
+				// new Port("Dunedin")
 			]);
 			const ship = new Ship(itinerary);
 			const controller = new Controller(ship);
