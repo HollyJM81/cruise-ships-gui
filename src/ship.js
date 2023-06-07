@@ -5,7 +5,7 @@ class Ship {
 		this.itinerary = itinerary;
 		this.previousPort = null;
 		this.currentPort = this.itinerary.ports[0];
-		this.currentPort.addShip(this);
+		this.currentPort.addShip(itinerary);
 		// a fun wee extra...
 		this.passengerList = passengerList;
 		this.passengersOnBoard = [];

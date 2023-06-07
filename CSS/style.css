@@ -87,5 +87,22 @@ ul {
 }
 
 #addport {
+	position: absolute;
+	bottom: 100px;
+	display: flex;
+	align-items: center;
+}
+
+#port-input {
+	font-family: 'Bangers', cursive;
+	font-size: 20px;
+	color: white;
+}
+
+#port-submit {
+	background-color: white;
+	color: fuchsia;
 	
+	font-family: 'Bangers', cursive;
+	font-size: 20px;
 }
