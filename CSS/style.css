@@ -39,15 +39,16 @@ body {
 
 #sailbutton {
 	border: 0;
-  background-color: fuchsia;
-  color: white;
-  font-family: inherit;
-  padding: 10px 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0%;
-  width: 100%;
-	font-family: 'Pacifico', cursive;
+	background-color: fuchsia;
+	color: white;
+	font-family: inherit;
+	padding: 10px 20px;
+	position: absolute;
+	bottom: 0;
+	left: 0%;
+	width: 100%;
+	font-family: 'Bangers', cursive;
+	font-size: 20px;
 }
 
 #sailbutton:hover {
@@ -66,5 +67,21 @@ body {
 	top: 0%;
 	width: 800px;
 
-	font-family: 'Bangers', cursive;
+	font-family: 'Pacifico', cursive;
+}
+
+#departureBoard{
+	padding: 10px 20px;
+	position: absolute;
+	top: 0%;
+    height: 100%;
+    width: auto;
+    background-color: black;
+    color: white;
+    font-family: 'Bangers', cursive;
+}
+
+ul {
+    font-size: 30px;
+    list-style-type: none;
 }

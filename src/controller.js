@@ -32,6 +32,7 @@
 			const portsElementWidth = parseInt(portsElement.style.width, 10);
 			portsElement.style.width = `${portsElementWidth + 256}px`;
 		});
+		this.createDisplay();
 	}
 
 	renderMessage(message) {
@@ -78,6 +79,7 @@
 			const shipLeft = parseInt(shipElement.style.left, 10);
 			if (shipLeft === (nextPortElement.offsetLeft - 30)) {
 				ship.dock();
+				this.createDisplay();
 				this.renderMessage(`Welcome to ${ship.currentPort.name}! Don't forget your sunscreen...`);
 				clearInterval(sailInterval);
 			}
@@ -85,6 +87,22 @@
 		}, 20);
 		
 	};
+
+	createDisplay() {
+        const ship = this.ship;
+        const nextPortIndex = ship.itinerary.ports.indexOf(ship.currentPort) + 1;
+
+        const currentPortElement = document.getElementById("displayCurrPort");
+        const nextPortElement = document.getElementById("displayNextPort");
+
+        currentPortElement.innerHTML = `Current Port: ${ship.currentPort.name}`
+
+        if (nextPortIndex < ship.itinerary.ports.length) {
+            nextPortElement.innerHTML = `Next Port: ${ship.itinerary.ports[nextPortIndex].name}`;
+        } else {
+            nextPortElement.innerHTML = "End of our journey!"
+        };
+    }
 
 	// addPort() {
     //     const ship = this.ship;
