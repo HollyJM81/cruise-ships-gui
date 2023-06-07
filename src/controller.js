@@ -6,6 +6,14 @@
 		document.querySelector('#sailbutton').addEventListener('click', () => {
     this.setSail();
   });
+  document.querySelector("#portButton").addEventListener("click", (e) => {
+        e.preventDefault();
+        this.addPort();
+        this.renderPorts(ship.itinerary.ports);
+        this.renderShip();
+        this.displayMessage();
+        document.getElementById("input").value = "";
+      });
 	}
 
 	initialiseSea() {
@@ -103,7 +111,23 @@
             nextPortElement.innerHTML = "End of our journey!"
         };
     }
+// addPort() {
+//       const ship = this.ship;
 
+//       const newPort = document.getElementById("input").value;
+
+//       const portObject = new Port(newPort);
+
+//       if (newPort === "") {
+//         return this.renderMessage("Add a port name to proceed!");
+//       }
+//       ship.itinerary.ports.push(portObject);
+
+//       if (!ship.currentPort) {
+//         ship.currentPort = ship.itinerary.ports[0];
+//       }
+//     }
+//   }
 addPort() {
 document.querySelector('#port-submit').addEventListener('click', () => {
 	const ship = this.ship;
