@@ -6,9 +6,11 @@ The program contains 3 modules (Port, Itinerary and Ship), which pass informatio
 making it possible to build itineraries, set sail and dock at subsequent ports. I've added a couple of my own additions, 
 like keeping track of passengers coming aboard and disembarking.  
 
+All of this is rendered in the browser.
+
 :construction:
 
-This iteration will eventually render the ports and ships in the browser, taking user input to build the itinerary. :eyes: 
+This iteration will eventually take user input to build the itinerary. :eyes: 
 
 :construction:
 
